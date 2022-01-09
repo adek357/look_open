@@ -63,7 +63,7 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         mkdir openwrt/package/lean
         git clone $REPO_URL_L -b $REPO_BRANCH mt
-        cp -r workdir/mt/package/lean/mt openwrt/package/lean/
+        cp -r mt/package/lean/mt openwrt/package/lean/
 
     - name: Load custom feeds
       run: |
