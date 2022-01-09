@@ -21,7 +21,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_URL_L: https://github.com/coolsnowwolf/lede/tree/master/package/lean/mt
+  REPO_URL_L: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -63,7 +63,7 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         mkdir openwrt/package/lean
         git clone $REPO_URL_L -b $REPO_BRANCH mt
-        ln -sf /workdir/mt $GITHUB_WORKSPACE/openwrt/package/lean
+        cp -r workdir/mt/package/lean/mt openwrt/package/lean/
 
     - name: Load custom feeds
       run: |
